@@ -4,6 +4,9 @@
     python scripts/manage_users.py add NAME ROLE [REGIONS]    # ROLE: viewer | dispatcher | supervisor
                                                               # REGIONS: comma list (la,jhb,adl,chiba,zj) or * for all
     python scripts/manage_users.py list
+    python scripts/manage_users.py from-env                   # cloud: create/update demo accounts from env vars
+                                                              # KNOCK_PASSWORD_SUPERVISOR, KNOCK_PASSWORD_DISPATCHER,
+                                                              # KNOCK_PASSWORD_VIEWER, KNOCK_PASSWORD_JHB_DISPATCHER
 
 Passwords are read from the terminal (not echoed) or generated, and printed once. Store them in a password manager.
 """
@@ -42,6 +45,16 @@ def main(argv):
             pw = gen(); print('Generated password:', pw)
         USERS.add(name, pw, role, regions)
         print('Saved %s (%s, regions %s).' % (name, role, ','.join(regions))); return 0
+    if cmd == 'from-env':
+        made = []
+        for name, role, regs in DEMO:
+            pw = os.environ.get('KNOCK_PASSWORD_' + name.upper().replace('-', '_'))
+            if pw:
+                USERS.add(name, pw, role, regs.split(','))
+                made.append(name)
+        if not made:
+            print('from-env: no KNOCK_PASSWORD_* variables set; no accounts created.'); return 1
+        print('from-env: accounts ready: ' + ', '.join(made) + ' (passwords not printed)'); return 0
     if cmd == 'list':
         data = USERS._load()['users']
         for n, u in data.items():
