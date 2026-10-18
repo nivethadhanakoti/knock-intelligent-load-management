@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+logs/
+.env
+config/
+models/fault_classifier.pkl
+models/fault_classifier.pkl.sig

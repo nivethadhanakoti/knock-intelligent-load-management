@@ -1,0 +1,732 @@
+{
+ "generated": "2026-10-17 10:52",
+ "seed": 42,
+ "approveAfterMin": 5,
+ "regions": {
+  "la": {
+   "region": {
+    "key": "la",
+    "name": "Los Angeles, USA",
+    "short": "Los Angeles",
+    "streets": [
+     "Alder Avenue",
+     "Birch Street",
+     "Cedar Lane",
+     "Oak Street",
+     "Elm Street",
+     "Fig Avenue",
+     "Juniper Way",
+     "Maple Drive",
+     "Palm Court"
+    ],
+    "grid": "60 Hz, 120/240 V split phase",
+    "protocol": "IEEE 2030.5 (California Rule 21)",
+    "tempUnit": "F",
+    "tempBase": 80,
+    "tempSlope": 40,
+    "bluntName": "rotating outage",
+    "bluntCutMin": 15,
+    "languages": [
+     "en",
+     "es",
+     "zh",
+     "ko",
+     "vi",
+     "tl",
+     "hy"
+    ],
+    "defaultLang": "es",
+    "crisisName": "Santa Ana heat event",
+    "fleet": "Home batteries run by a fleet operator such as Base Power",
+    "localBlunt": "Rotating outages and Public Safety Power Shutoffs (PSPS) during fire weather",
+    "why": "Wildfire weather and heat waves stress the grid; silent batteries are written off and whole streets are cut."
+   },
+   "scenarioName": "Santa Ana heat event",
+   "summary": {
+    "knock_ai": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 8,
+     "probes": 61,
+     "fuses": 0,
+     "trucks": 3,
+     "dr": 0,
+     "maint": 1,
+     "rogueS": 230,
+     "rogues": 3,
+     "slowMin": 2247,
+     "islands": 0,
+     "prevented": 9,
+     "reviews": 0,
+     "insights": 3,
+     "spoiled": false
+    },
+    "knock": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 8,
+     "probes": 73,
+     "fuses": 0,
+     "trucks": 3,
+     "dr": 0,
+     "maint": 1,
+     "rogueS": 230,
+     "rogues": 12,
+     "slowMin": 2851,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    },
+    "baseline": {
+     "darkPeak": 15,
+     "crit": 6,
+     "custMin": 853,
+     "unservedKwh": 136.9,
+     "recovered": 0,
+     "probes": 0,
+     "fuses": 0,
+     "trucks": 11,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": null,
+     "rogues": 12,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    }
+   },
+   "insights": [
+    {
+     "clock": "15:04",
+     "title": "Overload predicted on 9 streets around 15:49"
+    },
+    {
+     "clock": "16:14",
+     "title": "Bad firmware pattern: 4.2.1"
+    },
+    {
+     "clock": "16:14",
+     "title": "Pattern: misbehaving units cluster on street Juniper Way"
+    }
+   ],
+   "events": [
+    {
+     "clock": "15:20",
+     "text": "Voltage sag at T4 trips 4 inverters"
+    },
+    {
+     "clock": "15:28",
+     "text": "Cellular gateway fault: 6 batteries stop reporting"
+    },
+    {
+     "clock": "15:40",
+     "text": "Inverter on H024 starts overheating"
+    },
+    {
+     "clock": "16:10",
+     "text": "Firmware 4.2.1 starts unscheduled charging on 3 units"
+    },
+    {
+     "clock": "16:35",
+     "text": "Firmware 4.2.1 activates on more units"
+    },
+    {
+     "clock": "16:45",
+     "text": "Second wave: inland temperatures pass 110 F, AC load surges"
+    },
+    {
+     "clock": "17:05",
+     "text": "Firmware 4.2.1 activates on the rest of the cohort"
+    }
+   ]
+  },
+  "jhb": {
+   "region": {
+    "key": "jhb",
+    "name": "Johannesburg, South Africa",
+    "short": "Johannesburg",
+    "streets": [
+     "Acacia Street",
+     "Baobab Road",
+     "Jacaranda Avenue",
+     "Protea Street",
+     "Marula Lane",
+     "Kiaat Road",
+     "Msasa Street",
+     "Aloe Avenue",
+     "Fynbos Close"
+    ],
+    "grid": "50 Hz, 230 V",
+    "protocol": "Vendor cloud APIs and SunSpec Modbus (no national DER command protocol)",
+    "tempUnit": "C",
+    "tempBase": 14,
+    "tempSlope": -16,
+    "bluntName": "load reduction",
+    "bluntCutMin": 120,
+    "languages": [
+     "en",
+     "zu",
+     "af",
+     "st"
+    ],
+    "defaultLang": "zu",
+    "crisisName": "Winter evening peak and load reduction",
+    "fleet": "Home inverter-battery systems bought for backup during load shedding",
+    "localBlunt": "Load reduction: Eskom cuts whole suburbs for 4 to 5 hours when a local transformer is overloaded",
+    "why": "The blunt move is literally KNOCK's target: overloaded transformer, so the whole area goes dark. KNOCK turns that into slow, island and pre-charge, street by street.",
+    "start": 1020
+   },
+   "scenarioName": "Winter evening peak and load reduction",
+   "summary": {
+    "knock_ai": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 8,
+     "probes": 50,
+     "fuses": 0,
+     "trucks": 2,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": 230,
+     "rogues": 3,
+     "slowMin": 282,
+     "islands": 0,
+     "prevented": 9,
+     "reviews": 0,
+     "insights": 3,
+     "spoiled": false
+    },
+    "knock": {
+     "darkPeak": 2,
+     "crit": 0,
+     "custMin": 140,
+     "unservedKwh": 5.1,
+     "recovered": 8,
+     "probes": 59,
+     "fuses": 0,
+     "trucks": 2,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": 230,
+     "rogues": 12,
+     "slowMin": 282,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    },
+    "baseline": {
+     "darkPeak": 26,
+     "crit": 6,
+     "custMin": 1194,
+     "unservedKwh": 121.4,
+     "recovered": 0,
+     "probes": 0,
+     "fuses": 0,
+     "trucks": 10,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": null,
+     "rogues": 12,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    }
+   },
+   "insights": [
+    {
+     "clock": "17:04",
+     "title": "Overload predicted on 3 streets around 17:49"
+    },
+    {
+     "clock": "18:14",
+     "title": "Bad firmware pattern: 4.2.1"
+    },
+    {
+     "clock": "18:14",
+     "title": "Pattern: misbehaving units cluster on street Msasa Street"
+    }
+   ],
+   "events": [
+    {
+     "clock": "17:00",
+     "text": "Load-reduction notice: Baobab Road and Kiaat Road will be cut from 18:00 to 20:00"
+    },
+    {
+     "clock": "17:20",
+     "text": "Voltage dip on Protea Street trips 4 inverters"
+    },
+    {
+     "clock": "17:28",
+     "text": "Mobile network congestion: 6 batteries stop reporting"
+    },
+    {
+     "clock": "18:10",
+     "text": "Firmware 4.2.1 starts unscheduled charging on 3 units"
+    },
+    {
+     "clock": "18:35",
+     "text": "Firmware 4.2.1 activates on more units"
+    },
+    {
+     "clock": "19:05",
+     "text": "Firmware 4.2.1 activates on the rest of the cohort"
+    }
+   ]
+  },
+  "adl": {
+   "region": {
+    "key": "adl",
+    "name": "Adelaide, Australia",
+    "short": "Adelaide",
+    "streets": [
+     "Banksia Street",
+     "Wattle Avenue",
+     "Grevillea Road",
+     "Bottlebrush Lane",
+     "Jarrah Street",
+     "Karri Road",
+     "Mallee Avenue",
+     "Saltbush Court",
+     "Coolibah Way"
+    ],
+    "grid": "50 Hz, 230 V",
+    "protocol": "CSIP-AUS (the Australian profile of IEEE 2030.5)",
+    "tempUnit": "C",
+    "tempBase": 27,
+    "tempSlope": 25,
+    "bluntName": "rotational load shedding",
+    "bluntCutMin": 30,
+    "languages": [
+     "en",
+     "zh",
+     "vi",
+     "it"
+    ],
+    "defaultLang": "zh",
+    "crisisName": "45 \u00b0C heatwave with the state islanded from the grid",
+    "fleet": "Rebated home batteries (Cheaper Home Batteries); most are not yet in a virtual power plant",
+    "localBlunt": "Rotational load shedding, and the emergency backstop that remotely switches rooftop solar off",
+    "why": "Hundreds of thousands of new home batteries, but only about one in ten is coordinated. KNOCK makes the uncoordinated ones safe to rely on.",
+    "start": 900
+   },
+   "scenarioName": "45 \u00b0C heatwave with the state islanded from the grid",
+   "summary": {
+    "knock_ai": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 16,
+     "probes": 61,
+     "fuses": 0,
+     "trucks": 3,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": 220,
+     "rogues": 3,
+     "slowMin": 1985,
+     "islands": 0,
+     "prevented": 9,
+     "reviews": 0,
+     "insights": 4,
+     "spoiled": false
+    },
+    "knock": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 16,
+     "probes": 73,
+     "fuses": 0,
+     "trucks": 3,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": 220,
+     "rogues": 11,
+     "slowMin": 1985,
+     "islands": 0,
+     "prevented": 1,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    },
+    "baseline": {
+     "darkPeak": 19,
+     "crit": 6,
+     "custMin": 1180,
+     "unservedKwh": 159.2,
+     "recovered": 0,
+     "probes": 0,
+     "fuses": 0,
+     "trucks": 19,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": null,
+     "rogues": 11,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    }
+   },
+   "insights": [
+    {
+     "clock": "15:04",
+     "title": "Overload predicted on 8 streets around 15:49"
+    },
+    {
+     "clock": "15:12",
+     "title": "Overload predicted on 1 street around 15:57"
+    },
+    {
+     "clock": "16:14",
+     "title": "Bad firmware pattern: 4.2.1"
+    },
+    {
+     "clock": "16:14",
+     "title": "Pattern: misbehaving units cluster on street Mallee Avenue"
+    }
+   ],
+   "events": [
+    {
+     "clock": "15:20",
+     "text": "Voltage dip on Bottlebrush Lane trips 4 inverters"
+    },
+    {
+     "clock": "15:35",
+     "text": "Interconnector trips and South Australia is islanded: a frequency dip trips inverters on 3 streets"
+    },
+    {
+     "clock": "15:50",
+     "text": "VPP cloud outage: 6 batteries stop reporting"
+    },
+    {
+     "clock": "16:10",
+     "text": "Firmware 4.2.1 starts unscheduled charging on 3 units"
+    },
+    {
+     "clock": "16:35",
+     "text": "Firmware 4.2.1 activates on more units"
+    },
+    {
+     "clock": "17:05",
+     "text": "Firmware 4.2.1 activates on the rest of the cohort"
+    }
+   ]
+  },
+  "chiba": {
+   "region": {
+    "key": "chiba",
+    "name": "Chiba, Japan",
+    "short": "Chiba",
+    "streets": [
+     "Sakura-dori",
+     "Matsu-dori",
+     "Ume-dori",
+     "Kaede-dori",
+     "Take-dori",
+     "Kiku-dori",
+     "Fuji-dori",
+     "Hinoki-dori",
+     "Ayame-dori"
+    ],
+    "grid": "50 Hz, 100/200 V (eastern Japan)",
+    "protocol": "ECHONET Lite (home energy management standard)",
+    "tempUnit": "C",
+    "tempBase": 26,
+    "tempSlope": 18,
+    "bluntName": "planned outage",
+    "bluntCutMin": 30,
+    "languages": [
+     "ja",
+     "en",
+     "zh",
+     "ko",
+     "vi"
+    ],
+    "defaultLang": "ja",
+    "crisisName": "Typhoon landfall",
+    "fleet": "Home batteries paired with rooftop solar whose feed-in contracts have ended",
+    "localBlunt": "Storm damage leaves streets dark for days; batteries that stop reporting are assumed lost",
+    "why": "Typhoons take out cell towers and power lines together. Silence is the norm, not a fault, so knocking matters most here.",
+    "start": 780
+   },
+   "scenarioName": "Typhoon landfall",
+   "summary": {
+    "knock_ai": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 68,
+     "probes": 491,
+     "fuses": 0,
+     "trucks": 2,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": 180,
+     "rogues": 3,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 9,
+     "reviews": 0,
+     "insights": 3,
+     "spoiled": false
+    },
+    "knock": {
+     "darkPeak": 1,
+     "crit": 0,
+     "custMin": 85,
+     "unservedKwh": 3.4,
+     "recovered": 68,
+     "probes": 501,
+     "fuses": 0,
+     "trucks": 2,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": 180,
+     "rogues": 12,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    },
+    "baseline": {
+     "darkPeak": 13,
+     "crit": 4,
+     "custMin": 538,
+     "unservedKwh": 52.0,
+     "recovered": 0,
+     "probes": 0,
+     "fuses": 0,
+     "trucks": 70,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": null,
+     "rogues": 12,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    }
+   },
+   "insights": [
+    {
+     "clock": "13:15",
+     "title": "Network outage pattern, not 67 hardware failures"
+    },
+    {
+     "clock": "14:15",
+     "title": "Bad firmware pattern: 4.2.1"
+    },
+    {
+     "clock": "14:37",
+     "title": "Pattern: misbehaving units cluster on street Fuji-dori"
+    }
+   ],
+   "events": [
+    {
+     "clock": "13:15",
+     "text": "Typhoon winds knock out cell towers: half of all batteries go silent"
+    },
+    {
+     "clock": "13:25",
+     "text": "Fallen trees cut the line to Ume-dori: the street loses grid power without warning"
+    },
+    {
+     "clock": "13:30",
+     "text": "Voltage dip on Kaede-dori trips 4 inverters"
+    },
+    {
+     "clock": "14:10",
+     "text": "Firmware 4.2.1 starts unscheduled charging on 3 units"
+    },
+    {
+     "clock": "14:35",
+     "text": "Firmware 4.2.1 activates on more units"
+    },
+    {
+     "clock": "15:05",
+     "text": "Firmware 4.2.1 activates on the rest of the cohort"
+    }
+   ]
+  },
+  "zj": {
+   "region": {
+    "key": "zj",
+    "name": "Zhejiang, China",
+    "short": "Zhejiang",
+    "streets": [
+     "Hehua Lu",
+     "Guihua Lu",
+     "Meihua Lu",
+     "Lanhua Lu",
+     "Zhuyuan Lu",
+     "Songlin Lu",
+     "Liuxi Lu",
+     "Taoyuan Lu",
+     "Chaxiang Lu"
+    ],
+    "grid": "50 Hz, 220 V",
+    "protocol": "Provincial VPP platform interface (national VPP standard GB/T 47241-2026)",
+    "tempUnit": "C",
+    "tempBase": 30,
+    "tempSlope": 18,
+    "bluntName": "orderly power-use rationing",
+    "bluntCutMin": 60,
+    "languages": [
+     "zh",
+     "en"
+    ],
+    "defaultLang": "zh",
+    "crisisName": "Summer peak with operator network faults",
+    "fleet": "Distributed batteries aggregated into a provincial virtual power plant; the same engine fits telecom base-station backup batteries",
+    "localBlunt": "Orderly power-use rationing that takes whole areas off supply in rotation at peak",
+    "why": "China is building virtual power plants at national scale. A VPP is only as good as its knowledge of which batteries are really there; KNOCK supplies that.",
+    "start": 840
+   },
+   "scenarioName": "Summer peak with operator network faults",
+   "summary": {
+    "knock_ai": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 24,
+     "probes": 177,
+     "fuses": 0,
+     "trucks": 3,
+     "dr": 0,
+     "maint": 1,
+     "rogueS": 190,
+     "rogues": 3,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 9,
+     "reviews": 0,
+     "insights": 7,
+     "spoiled": false
+    },
+    "knock": {
+     "darkPeak": 0,
+     "crit": 0,
+     "custMin": 0,
+     "unservedKwh": 0.0,
+     "recovered": 24,
+     "probes": 187,
+     "fuses": 0,
+     "trucks": 3,
+     "dr": 0,
+     "maint": 1,
+     "rogueS": 190,
+     "rogues": 12,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    },
+    "baseline": {
+     "darkPeak": 13,
+     "crit": 4,
+     "custMin": 585,
+     "unservedKwh": 74.3,
+     "recovered": 0,
+     "probes": 0,
+     "fuses": 0,
+     "trucks": 27,
+     "dr": 0,
+     "maint": 0,
+     "rogueS": null,
+     "rogues": 12,
+     "slowMin": 0,
+     "islands": 0,
+     "prevented": 0,
+     "reviews": 0,
+     "insights": 0,
+     "spoiled": false
+    }
+   },
+   "insights": [
+    {
+     "clock": "14:04",
+     "title": "Overload predicted on 1 street around 14:49"
+    },
+    {
+     "clock": "14:06",
+     "title": "Overload predicted on 4 streets around 14:51"
+    },
+    {
+     "clock": "14:10",
+     "title": "Overload predicted on 2 streets around 14:55"
+    },
+    {
+     "clock": "14:12",
+     "title": "Overload predicted on 2 streets around 14:57"
+    },
+    {
+     "clock": "14:28",
+     "title": "Network outage pattern, not 22 hardware failures"
+    },
+    {
+     "clock": "15:14",
+     "title": "Bad firmware pattern: 4.2.1"
+    },
+    {
+     "clock": "15:25",
+     "title": "Pattern: misbehaving units cluster on street Liuxi Lu"
+    }
+   ],
+   "events": [
+    {
+     "clock": "14:20",
+     "text": "Voltage dip on Lanhua Lu trips 4 inverters"
+    },
+    {
+     "clock": "14:28",
+     "text": "Operator network fault: about 15% of batteries stop reporting"
+    },
+    {
+     "clock": "14:40",
+     "text": "An inverter on Guihua Lu starts overheating"
+    },
+    {
+     "clock": "15:10",
+     "text": "Firmware 4.2.1 starts unscheduled charging on 3 units"
+    },
+    {
+     "clock": "15:35",
+     "text": "Firmware 4.2.1 activates on more units"
+    },
+    {
+     "clock": "16:05",
+     "text": "Firmware 4.2.1 activates on the rest of the cohort"
+    }
+   ]
+  }
+ }
+}
